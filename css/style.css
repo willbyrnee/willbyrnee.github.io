@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #fefefe; /* Off-white background */
+    color: #1e1e1e; /* Softer dark text */
+}
+
+/* The profile container is full width on mobile, with a max-width of 60% on larger screens */
+.profile {
+    width: 100%;
+    max-width: 50%;
+    padding: 40px 20px;
+    margin: 0 auto; /* center the container on larger screens */
+}
+
+.profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 100%; /* Use the full available width */
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #0073e6;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #005bb5;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .profile {
+        max-width: 100%;
+        padding: 40px 10px;
+    }
+}
