@@ -1,65 +1,126 @@
-body {
+/* Reset and base styles */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #fefefe; /* Off-white background */
-    color: #1e1e1e; /* Softer dark text */
+    box-sizing: border-box;
 }
 
-/* The profile container is full width on mobile, with a max-width of 60% on larger screens */
-.profile {
+html,
+body {
     width: 100%;
-    max-width: 50%;
-    padding: 40px 20px;
-    margin: 0 auto; /* center the container on larger screens */
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
-.profile-photo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: block;
-    margin-bottom: 20px;
+/* Container uses CSS Grid for a 2x2 layout over the full viewport */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
 }
 
-h1 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-weight: 300;
-}
-
-p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    max-width: 100%; /* Use the full available width */
-}
-
-.social-links {
-    list-style: none;
-    padding: 0;
-}
-
-.social-links li {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.social-links a {
+/* Quadrant links styling */
+.quadrant {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     text-decoration: none;
-    color: #0073e6;
-    font-size: 1rem;
-    transition: color 0.2s ease;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    padding: 1rem;
 }
 
-.social-links a:hover {
-    color: #005bb5;
+/* Override alignment for right-hand quadrants */
+.top-right,
+.bottom-right {
+    align-items: flex-end;
 }
 
-/* Mobile adjustments */
-@media (max-width: 600px) {
-    .profile {
-        max-width: 100%;
-        padding: 40px 10px;
-    }
+/* Background images for each quadrant (images located in the public directory) */
+.top-left {
+    background: url("./../public/test.jpg") center center / cover no-repeat;
+}
+.top-right {
+    background: url("./../public/test.jpg") center center / cover no-repeat;
+}
+.bottom-left {
+    background: url("./../public/test.jpg") center center / cover no-repeat;
+}
+.bottom-right {
+    background: url("./../public/test.jpg") center center / cover no-repeat;
+}
+
+/* Text block container for headings and subtext */
+.text-block {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+/* Heading style */
+.text-block .heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+}
+
+/* Subtext style */
+.text-block .subtext {
+    font-size: 0.9rem;
+    display: block;
+}
+
+/* Center container for headshot and social buttons */
+.center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Headshot image styling */
+.headshot {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* Social buttons styling */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-buttons a {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.social-buttons a:hover {
+    background-color: #555;
+}
+
+/* Social icon image styling */
+.social-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
 }
