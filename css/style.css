@@ -44,7 +44,7 @@ body {
 
 /* Background images for each quadrant (images located in the public directory) */
 .top-left {
-    background: url("./../public/test.jpg") center center / cover no-repeat;
+    background: url("./../public/faceimage.jpeg") center center / cover no-repeat;
 }
 .top-right {
     background: url("./../public/willbyrnesailing.jpg") center center / cover
