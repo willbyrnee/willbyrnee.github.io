@@ -51,7 +51,7 @@ body {
         no-repeat;
 }
 .bottom-left {
-    background: url("./../public/test.jpg") center center / cover no-repeat;
+    background: url("./../public/kaiphoto.jpg") center center / cover no-repeat;
 }
 .bottom-right {
     background: url("./../public/marathonphoto.jpg") center center / cover
