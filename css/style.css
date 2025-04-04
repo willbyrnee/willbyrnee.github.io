@@ -44,18 +44,23 @@ body {
 
 /* Background images for each quadrant (images located in the public directory) */
 .top-left {
-    background: url("./../public/resumeimage.jpeg") center center / cover no-repeat;
+    background: url("./../public/resumeimage.jpeg") center center / cover
+        no-repeat;
+    background-position: center 65%;
 }
 .top-right {
     background: url("./../public/willbyrnesailing.jpg") center center / cover
         no-repeat;
+    background-position: center 25%;
 }
 .bottom-left {
     background: url("./../public/kaiphoto.jpg") center center / cover no-repeat;
+    background-position: center 30%;
 }
 .bottom-right {
-    background: url("./../public/marathonphoto.jpg") center center / cover
+    background: url("./../public/marathonphoto.jpg") center top / cover
         no-repeat;
+    background-position: bottom left;
 }
 
 /* Text block container for headings and subtext */
