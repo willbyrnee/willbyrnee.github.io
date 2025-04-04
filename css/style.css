@@ -37,9 +37,17 @@ body {
 }
 
 /* Override alignment for right-hand quadrants */
-.top-right,
-.bottom-right {
+.top-right {
     align-items: flex-end;
+}
+
+.bottom-left {
+    justify-content: flex-end; /* Bottom aligned, left aligned (default) */
+}
+
+.bottom-right {
+    justify-content: flex-end; /* Bottom aligned */
+    align-items: flex-end; /* Right aligned */
 }
 
 /* Background images for each quadrant (images located in the public directory) */
@@ -150,4 +158,37 @@ body {
 .text-block {
     position: relative;
     z-index: 2;
+}
+
+@media screen and (max-width: 600px) {
+    /* Increase the center container's padding */
+    .center-container {
+        padding: 3rem;
+    }
+
+    /* Enlarge the headshot */
+    .headshot {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Enlarge social buttons and icons */
+    .social-buttons a {
+        height: 40px;
+        width: 40px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Optionally, adjust font sizes for clarity */
+    .text-block .heading {
+        font-size: 1.4rem;
+    }
+
+    .text-block .subtext {
+        font-size: 1rem;
+    }
 }
