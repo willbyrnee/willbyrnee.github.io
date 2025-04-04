@@ -53,7 +53,7 @@ body {
     background: url("./../public/test.jpg") center center / cover no-repeat;
 }
 .bottom-right {
-    background: url("./../public/marathonphoto.JPG") center center / cover no-repeat;
+    background: url("./../public/marathonphoto.jpg") center center / cover no-repeat;
 }
 
 /* Text block container for headings and subtext */
