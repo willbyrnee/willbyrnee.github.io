@@ -47,13 +47,15 @@ body {
     background: url("./../public/test.jpg") center center / cover no-repeat;
 }
 .top-right {
-    background: url("./../public/willbyrnesailing.jpg") center center / cover no-repeat;
+    background: url("./../public/willbyrnesailing.jpg") center center / cover
+        no-repeat;
 }
 .bottom-left {
     background: url("./../public/test.jpg") center center / cover no-repeat;
 }
 .bottom-right {
-    background: url("./../public/marathonphoto.jpg") center center / cover no-repeat;
+    background: url("./../public/marathonphoto.jpg") center center / cover
+        no-repeat;
 }
 
 /* Text block container for headings and subtext */
@@ -118,4 +120,29 @@ body {
 .social-icon {
     width: 40px;
     height: 40px;
+}
+
+/* Add a black overlay over each quadrant */
+.quadrant::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+/* Fade the overlay on hover */
+.quadrant:hover::before {
+    opacity: 0;
+}
+
+/* Ensure text appears above the overlay */
+.text-block {
+    position: relative;
+    z-index: 2;
 }
