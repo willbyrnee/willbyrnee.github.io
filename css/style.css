@@ -73,7 +73,7 @@ body {
 
 /* Text block container for headings and subtext */
 .text-block {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 0.5rem 1rem;
     border-radius: 4px;
 }
