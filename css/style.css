@@ -66,7 +66,7 @@ body {
     background-position: center 30%;
 }
 .bottom-right {
-    background: url("./../public/marathonphoto.jpg") center top / cover
+    background: url("./../public/bikephoto.JPG") center top / cover
         no-repeat;
     background-position: bottom left;
 }
