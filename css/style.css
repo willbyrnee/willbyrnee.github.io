@@ -81,6 +81,7 @@ body {
 /* Heading style */
 .text-block .heading {
     font-size: 1.2rem;
+    font-color: rgba(0, 0, 0);
     font-weight: bold;
     display: block;
 }
@@ -88,6 +89,7 @@ body {
 /* Subtext style */
 .text-block .subtext {
     font-size: 0.9rem;
+     font-color: rgba(0, 0, 0);
     display: block;
 }
 
