@@ -81,16 +81,16 @@ body {
 /* Heading style */
 .text-block .heading {
     font-size: 1.2rem;
-    font-color: rgba(0, 0, 0);
     font-weight: bold;
     display: block;
+    color: #000000; 
 }
 
 /* Subtext style */
 .text-block .subtext {
     font-size: 0.9rem;
-     font-color: rgba(0, 0, 0);
     display: block;
+    color: #000000;  
 }
 
 /* Center container for headshot and social buttons */
