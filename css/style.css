@@ -1,197 +1,278 @@
-/* Reset and base styles */
+:root {
+  --bg: #0a0b0c;
+  --ink: #f4f1ea;
+  --muted: #c8c3b8;
+  --accent: #e4ef5a;
+  --card: rgba(10, 11, 12, 0.92);
+  --card-border: rgba(244, 241, 234, 0.28);
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
 }
 
-/* Container uses CSS Grid for a 2x2 layout over the full viewport */
-.container {
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  color: var(--ink);
+  font-family: "Outfit", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.social-bar {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  z-index: 30;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.soc {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #f4f1ea;
+  color: #0a0b0c;
+  border-radius: 999px;
+  padding: 10px 16px 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid #f4f1ea;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.soc svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.soc:hover,
+.soc:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.soc:focus-visible,
+.menu-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  color: #fff;
+  background: var(--bg);
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-photo img {
+  object-position: 58% 42%;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(10, 11, 12, 0.88) 0%, rgba(10, 11, 12, 0.22) 48%, rgba(10, 11, 12, 0.28) 100%),
+    linear-gradient(to right, rgba(10, 11, 12, 0.4) 0%, rgba(10, 11, 12, 0.05) 50%, rgba(10, 11, 12, 0.2) 100%);
+}
+
+.hero-copy {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 36px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.hero h1 {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: clamp(56px, 9.6vw, 132px);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.menu {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 16px 18px 18px;
+  min-height: 100%;
+  height: 100%;
+  color: var(--ink);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.menu-card:hover,
+.menu-card:focus-visible {
+  border-color: var(--accent);
+  background: rgba(10, 11, 12, 0.97);
+  transform: translateY(-2px);
+}
+
+.menu-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.menu-title i {
+  font-style: normal;
+  color: var(--accent);
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.menu-card:hover .menu-title i {
+  transform: translateX(3px);
+}
+
+.menu-blurb {
+  font-size: 13.5px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+@media (max-width: 1100px) {
+  .menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: clamp(52px, 11vw, 120px);
+  }
+}
+
+@media (max-width: 700px) {
+  .social-bar {
+    top: 14px;
+    left: auto;
+    right: 14px;
+    width: max-content;
+    max-width: calc(100% - 28px);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
+    align-items: stretch;
+    justify-content: flex-end;
+    gap: 6px;
+  }
 
-/* Quadrant links styling */
-.quadrant {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    position: relative;
-    padding: 1rem;
-}
-
-/* Override alignment for right-hand quadrants */
-.top-right {
-    align-items: flex-end;
-}
-
-.bottom-left {
-    justify-content: flex-end; /* Bottom aligned, left aligned (default) */
-}
-
-.bottom-right {
-    justify-content: flex-end; /* Bottom aligned */
-    align-items: flex-end; /* Right aligned */
-}
-
-/* Background images for each quadrant (images located in the public directory) */
-.top-left {
-    background: url("./../public/resumeimage.jpeg") center center / cover
-        no-repeat;
-    background-position: center 65%;
-}
-.top-right {
-    background: url("./../public/willbyrnesailing.jpg") center center / cover
-        no-repeat;
-    background-position: center 25%;
-}
-.bottom-left {
-    background: url("./../public/kaiphoto.jpg") center center / cover no-repeat;
-    background-position: center 30%;
-}
-.bottom-right {
-    background: url("./../public/bikephoto.JPG") center top / cover
-        no-repeat;
-    background-position: center 72%;
-}
-
-/* Text block container for headings and subtext */
-.text-block {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    max-width: 300px;  
-}
-
-/* Heading style */
-.text-block .heading {
-    font-size: 1.2rem;
-    font-weight: bold;
-    display: block;
-    color: #000000; 
-}
-
-/* Subtext style */
-.text-block .subtext {
-    font-size: 0.9rem;
-    display: block;
-    color: #000000;  
-}
-
-/* Center container for headshot and social buttons */
-.center-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    z-index: 10;
-}
-
-/* Headshot image styling */
-.headshot {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-}
-
-/* Social buttons styling */
-.social-buttons {
-    display: flex;
+  .social-bar .soc {
     justify-content: center;
-    gap: 1rem;
-}
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 11px;
+    gap: 5px;
+    white-space: nowrap;
+  }
 
-.social-buttons a {
-    background-color: #fff;
-    color: #fff;
-    text-decoration: none;
+  .social-bar .soc svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hero-photo img {
+    object-position: 48% 36%;
+  }
+
+  .hero-copy {
+    left: 14px;
+    right: 14px;
+    bottom: 18px;
+    gap: 14px;
+  }
+
+  .hero h1 {
+    font-size: 15vw;
+    letter-spacing: -0.055em;
+  }
+
+  .menu {
+    gap: 8px;
+  }
+
+  .menu-card {
+    padding: 12px 13px 13px;
+    gap: 6px;
     border-radius: 10px;
-    height: 40px;
-    width: 40px;
-}
+  }
 
-/* Social icon image styling */
-.social-icon {
-    width: 40px;
-    height: 40px;
-}
+  .menu-title {
+    font-size: 15px;
+  }
 
-/* Add a black overlay over each quadrant */
-.quadrant::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #000;
-    opacity: 0.2;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-/* Fade the overlay on hover */
-.quadrant:hover::before {
-    opacity: 0;
-}
-
-/* Ensure text appears above the overlay */
-.text-block {
-    position: relative;
-    z-index: 2;
-}
-
-@media screen and (max-width: 600px) {
-    /* Increase the center container's padding */
-    .center-container {
-        padding: 3rem;
-    }
-
-    /* Enlarge the headshot */
-    .headshot {
-        width: 150px;
-        height: 150px;
-    }
-
-    /* Enlarge social buttons and icons */
-    .social-buttons a {
-        height: 40px;
-        width: 40px;
-    }
-
-    .social-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    /* Optionally, adjust font sizes for clarity */
-    .text-block .heading {
-        font-size: 1.4rem;
-    }
-
-    .text-block .subtext {
-        font-size: 1rem;
-    }
+  .menu-blurb {
+    font-size: 12px;
+    line-height: 1.35;
+  }
 }

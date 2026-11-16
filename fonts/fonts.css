@@ -1,0 +1,19 @@
+/* Latin subsets of the two families the homepage uses.
+   Outfit covers body copy and the contact pills (300–600).
+   Syne covers the name and card titles (500–800). */
+
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url("outfit-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url("syne-latin.woff2") format("woff2");
+}
